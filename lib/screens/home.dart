@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:juno_drivers/tab_pages/home_tab.dart';
+import 'package:juno_drivers/tab_pages/profile_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -43,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen>
           HomeTab(),
           Center(child: Text('Earnings Tab')),
           Center(child: Text('Ratings Tab')),
-          Center(child: Text('Profile Tab')),
+          ProfileTab(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

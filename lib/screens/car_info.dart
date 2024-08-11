@@ -21,7 +21,7 @@ class _CarInfoScreenState extends State<CarInfoScreen> {
   String? selectedCarType;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  List<String> carTypes = ["Car", "CNG", "Bike"];
+  List<String> carTypes = ["Car", "Auto", "Bike"];
 
   bool isPasswordVisible = false;
 

@@ -9,6 +9,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:juno_drivers/assistants/assistant_methods.dart';
 import 'package:juno_drivers/global.dart';
+import 'package:juno_drivers/push_notifications/push_notification_system.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
@@ -97,6 +98,10 @@ class _HomeTabState extends State<HomeTab> {
     checkLocationPermission();
     AssistantMethods.readCurrentDriverInformation();
     locateDriverPosition();
+
+    PushNotificationSystem pushNotificationSystem = PushNotificationSystem();
+    pushNotificationSystem.initializeCloudMessaging(context);
+    pushNotificationSystem.generateAndGetToken();
   }
 
   @override

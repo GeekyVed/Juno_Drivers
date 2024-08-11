@@ -1,5 +1,6 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_geofire/flutter_geofire.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -112,5 +113,10 @@ class AssistantMethods {
         driverVehicleType = onlineDriverData.vehicleType!;
       }
     });
+  }
+
+  static void pauseLiveLocationUpdates(){
+    streamSubscriptionPosition!.pause();
+    Geofire.removeLocation(firebaseAuth.currentUser!.uid);
   }
 }
